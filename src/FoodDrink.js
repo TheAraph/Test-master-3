@@ -76,10 +76,12 @@ const FoodDrink = () => {
     <ScrollView>
     <View style = {{flex:1, justifyContent:'center', alignItems:'center'}}>
       <Text style={styles.Date}><CurrentDate></CurrentDate></Text>
+      <View style={styles.newcontainer}>
       <Text style={styles.Headline4}>Calories Consumed</Text>
       <Text style={styles.Headline2Black}>{caloriesConsumed}</Text>
       <Text style={styles.Headline4}>Water Drank in Litres</Text>
       <Text style={styles.Headline2Black}>{waterDrank}/{waterGoal}</Text>
+      </View>
       <TouchableOpacity style = {styles.Button} onPress = {() => navigation.navigate('LogFood')}>
         <Text style = {styles.ButtonText}>Log Food</Text>
       </TouchableOpacity>
@@ -101,6 +103,23 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     marginTop:100,
+},
+newcontainer:{
+  marginTop: 20,
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 341,
+  borderRadius: 30,
+  elevation: 3,
+  backgroundColor: '#FFF',
+  marginBottom: 25,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 2 },
+  shadowOpacity: 1,
+  shadowRadius: 10,
+  elevation: 25,
+  borderWidth: 2,
+borderColor: 'black',
 },
 textInput:{
     alignItems: 'center',
@@ -126,6 +145,11 @@ textInput:{
     margin: 10,
     borderWidth: 1,
     borderColor: "black",
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: .5,
+    shadowRadius: 3,
+    elevation: 25,
   },
   ButtonText:{
     fontFamily: "AvenirNext-Heavy",
@@ -168,13 +192,15 @@ textInput:{
     fontWeight:"bold",
     fontSize: 16,
     textDecorationLine: "underline",
-    fontFamily: "Avenir"
+    fontFamily: "Avenir",
+    marginBottom: 20
   },
   Date:{
     fontFamily: "AvenirNext-UltraLightItalic",
       fontSize: 24,
       color: "#000",
       fontStyle: 'italic',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      marginTop: 20
   }
 })

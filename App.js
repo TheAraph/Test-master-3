@@ -13,6 +13,11 @@ import Header from "./components/Header";
 import Health from "./src/Health";
 import Resources from "./src/Resources";
 import MainContainer from "./src/mainContainer";
+import { Button } from "react-native";
+import { StyleSheet } from "react-native";
+import { View } from "react-native";
+import { Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Stack = createStackNavigator();
 
@@ -121,6 +126,16 @@ function App(){
     component={Home} 
     options={{
           headerTitle: () => <Header name = "Home"/>,
+          headerRight: () => {
+            return (
+              <TouchableOpacity onPress={() => alert('Button pressed')}>
+                <View> 
+                  <Image source={require('./assets/img_568656.png')} 
+                  style={{width: 40, height: 40, right: 20, bottom: 5}}/>
+                </View>
+              </TouchableOpacity>
+            );
+          },
           headerStyle: {
             height:98,
             borderBottomLeftRadius:30,
@@ -134,6 +149,16 @@ function App(){
     />
     <Tab.Screen name={healthName} component={Health} options={{
           headerTitle: () => <Header name = "Health"/>,
+          headerRight: () => {
+            return (
+              <TouchableOpacity onPress={() => alert('Button pressed')}>
+                <View> 
+                  <Image source={require('./assets/img_568656.png')} 
+                  style={{width: 40, height: 40, right: 20, bottom: 5}}/>
+                </View>
+              </TouchableOpacity>
+            );
+          },
           headerStyle: {
             height:98,
             borderBottomLeftRadius:30,
@@ -146,6 +171,16 @@ function App(){
         }}/>
     <Tab.Screen name={infoName} component={Resources} options={{
           headerTitle: () => <Header name = "Resources"/>,
+          headerRight: () => {
+            return (
+              <TouchableOpacity onPress={() => alert('Button pressed')}>
+                <View> 
+                  <Image source={require('./assets/img_568656.png')} 
+                  style={{width: 40, height: 40, right: 20, bottom: 5}}/>
+                </View>
+              </TouchableOpacity>
+            );
+          },
           headerStyle: {
             height:98,
             borderBottomLeftRadius:30,
@@ -170,3 +205,16 @@ export default () => {
     
   )
 }
+
+const styles = StyleSheet.create({
+  profileBtn:{
+    width: 20,
+    height: 20,
+    borderRadius: 73,
+    elevation: 3,
+    backgroundColor: '#D5342B',
+    margin: 10,
+    borderWidth: 1,
+    borderColor: "black"
+  }}
+)

@@ -96,6 +96,11 @@ textInput:{
     margin: 10,
     borderWidth: 1,
     borderColor: "black",
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: .5,
+    shadowRadius: 3,
+    elevation: 25,
   },
   ButtonText:{
     fontFamily: "AvenirNext-Heavy",
